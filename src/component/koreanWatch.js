@@ -19,26 +19,6 @@ const StyledKoreanWatch = styled.div`
   grid-template-rows: 1fr 1fr;
 `
 
-const StyledSecond = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  display: grid;
-  grid-template-areas: 
-`
-
-const StyledSvg = styled.svg`
-  width: 700px;
-  height: 700px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`
-
 export default class KoreanWatch extends Component {
   constructor(props){
     super(props)

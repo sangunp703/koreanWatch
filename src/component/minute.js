@@ -54,13 +54,6 @@ export default class Minute extends Component {
         }
       }
     }
-    var bar = new ProgressBar.Path('#secondLine', {
-      easing: 'easeInOut',
-      duration: 2000
-    });
-    
-    bar.set(this.props.time.getSeconds()/60);
-    bar.animate(this.props.time.getSeconds()/60);
   }
   render(){
     return (
