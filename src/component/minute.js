@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import Word from './word'
+var ProgressBar = require('progressbar.js')
 
 const StyledMinute = styled.div`
   display: grid;
@@ -40,22 +41,26 @@ export default class Minute extends Component {
     for(let i = 0; i < words.length; i++){
       words[i].classList.remove("active")
       if(i < 5){
-        if(wordListBig[i].includes(parseInt(this.props.time.getSeconds() / 10))){
-          if(this.props.time.getHours()%12 !== 0 || this.props.time.getSeconds() !== 0){  // 0시 0분인 경우 표현 안함
+        if(wordListBig[i].includes(parseInt(this.props.time.getMinutes() / 10))){
+          if(this.props.time.getHours()%12 !== 0 || this.props.time.getMinutes() !== 0){  // 0시 0분인 경우 표현 안함
             words[i].classList.add("active")
           }
         }
       } else{
-        if(wordListSmall[i-5].includes(parseInt(this.props.time.getSeconds() % 10))){
-          if(this.props.time.getHours()%12 !== 0 || this.props.time.getSeconds() !== 0){  // 0시 0분인 경우 표현 안함
+        if(wordListSmall[i-5].includes(parseInt(this.props.time.getMinutes() % 10))){
+          if(this.props.time.getHours()%12 !== 0 || this.props.time.getMinutes() !== 0){  // 0시 0분인 경우 표현 안함
             words[i].classList.add("active")
           }
         }
       }
     }
-    minute.querySelectorAll('.active').forEach((e) => {
-      e.style.color = 'white'
-    })
+    var bar = new ProgressBar.Path('#secondLine', {
+      easing: 'easeInOut',
+      duration: 2000
+    });
+    
+    bar.set(this.props.time.getSeconds()/60);
+    bar.animate(this.props.time.getSeconds()/60);
   }
   render(){
     return (

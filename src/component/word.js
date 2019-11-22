@@ -5,6 +5,10 @@ var StyledWord = styled.span`
   color: #111;
   font-weight: bold;
   font-size: 4em;
+
+  &.active{
+    color: white;
+  }
 `
 
 export default class Word extends Component {

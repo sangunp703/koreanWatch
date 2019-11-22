@@ -38,14 +38,11 @@ export default class Additory extends Component {
         words[2].classList.add("active")
       }
     }
-    additory.querySelectorAll('.active').forEach((e) => {
-      e.style.color = 'white'
-    })
   }
   render(){
     return (
       <StyledAdditory className="additory">
-        <Word word="오"/>
+        <Word active word="오"/>
         <Word word="전"/>
         <Word word="후"/>
         <Word word="자"/>

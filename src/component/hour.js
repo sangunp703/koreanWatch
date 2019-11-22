@@ -42,9 +42,6 @@ export default class Hour extends Component {
         }
       }
     }
-    hour.querySelectorAll('.active').forEach((e) => {
-      e.style.color = 'white'
-    })
   }
   render(){
     return (

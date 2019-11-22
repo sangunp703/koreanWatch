@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Additory from './additory'
 import Hour from './hour'
 import Minute from './minute'
+import SquareSecond from './squareSecond'
+
 
 const StyledKoreanWatch = styled.div`
   position: absolute;
@@ -15,6 +17,26 @@ const StyledKoreanWatch = styled.div`
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 1fr;
+`
+
+const StyledSecond = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  display: grid;
+  grid-template-areas: 
+`
+
+const StyledSvg = styled.svg`
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `
 
 export default class KoreanWatch extends Component {
@@ -33,11 +55,14 @@ export default class KoreanWatch extends Component {
   }
   render(){
     return (
-      <StyledKoreanWatch>
-        <Additory time={this.state.time}/>
-        <Hour time={this.state.time}/>
-        <Minute time={this.state.time}/>
-      </StyledKoreanWatch>
+      <div>
+        <SquareSecond time={this.state.time}/>
+        <StyledKoreanWatch>
+          <Additory time={this.state.time}/>
+          <Hour time={this.state.time}/>
+          <Minute time={this.state.time}/>
+        </StyledKoreanWatch>
+      </div>
     )
   }
 }
