@@ -23,13 +23,19 @@ export default class Additory extends Component {
     }
     if(this.props.time.getHours()%12 === 0 && this.props.time.getMinutes() === 0){
       if(this.props.time.getHours() === 0){
-        words[0].classList.add("active")
-        words[1].classList.add("active")
+        words[3].classList.add("active")
+        words[4].classList.add("active")
       } else{
-        words[1].classList.add("active")
-        words[2].classList.add("active")
+        words[4].classList.add("active")
+        words[5].classList.add("active")
       }
     } else{
+      if(this.props.time.getMinutes()%10 === 5){
+        words[5].classList.add("active")
+      }
+      if(this.props.time.getMinutes() === 0){
+        words[4].classList.add("active")
+      }
       if(this.props.time.getHours()<12){
         words[0].classList.add("active")
         words[1].classList.add("active")

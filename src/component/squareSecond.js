@@ -41,10 +41,10 @@ export default class SquareSecond extends Component {
     });
     
     bar.set(previous);
-    bar.animate(this.props.time.getSeconds()/60);
-    shadowBar.set(previous);
-    shadowBar.animate(this.props.time.getSeconds()/60);
-    previous = this.props.time.getSeconds()/60
+    bar.animate(this.props.time.getSeconds()/59);
+    shadowBar.set(previous+0.005);
+    shadowBar.animate(this.props.time.getSeconds()/59+0.005);
+    previous = this.props.time.getSeconds()/59
   }
   render(){
     return (

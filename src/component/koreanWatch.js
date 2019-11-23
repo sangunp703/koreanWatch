@@ -19,6 +19,12 @@ const StyledKoreanWatch = styled.div`
   grid-template-rows: 1fr 1fr;
 `
 
+const testHour = 0
+const testMin = 5
+const testSec = 59
+
+const test = '2019/11/23/'+testHour+':'+testMin+':'+testSec
+
 export default class KoreanWatch extends Component {
   constructor(props){
     super(props)
