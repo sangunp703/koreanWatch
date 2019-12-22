@@ -1,11 +1,10 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Word from './word'
 import styled from 'styled-components'
 import Additory from './additory'
 import Hour from './hour'
 import Minute from './minute'
 import SquareSecond from './squareSecond'
-
 
 const StyledKoreanWatch = styled.div`
   position: absolute;
@@ -20,33 +19,33 @@ const StyledKoreanWatch = styled.div`
 `
 
 const testHour = 0
-const testMin = 5
+const testMin = 35
 const testSec = 59
 
-const test = '2019/11/23/'+testHour+':'+testMin+':'+testSec
+const test = '2019/11/23/' + testHour + ':' + testMin + ':' + testSec
 
 export default class KoreanWatch extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       time: new Date()
     }
   }
-  componentDidMount(){
+  componentDidMount() {
     setInterval((err, res) => {
       this.setState({
         time: new Date()
       })
-    },1000)
+    }, 1000)
   }
-  render(){
+  render() {
     return (
       <div>
-        <SquareSecond time={this.state.time}/>
+        <SquareSecond time={this.state.time} />
         <StyledKoreanWatch>
-          <Additory time={this.state.time}/>
-          <Hour time={this.state.time}/>
-          <Minute time={this.state.time}/>
+          <Additory time={this.state.time} />
+          <Hour time={this.state.time} />
+          <Minute time={this.state.time} />
         </StyledKoreanWatch>
       </div>
     )

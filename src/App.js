@@ -1,11 +1,9 @@
-import React from 'react';
+import React from 'react'
 import './App.css'
 import KoreanWatch from './component/koreanWatch'
 
 function App() {
-  return (
-    <KoreanWatch/>
-  );
+  return <KoreanWatch />
 }
 
-export default App;
+export default App
