@@ -18,9 +18,9 @@ const StyledKoreanWatch = styled.div`
   grid-template-rows: 1fr 1fr;
 `
 
-const testHour = 0
-const testMin = 35
-const testSec = 59
+const testHour = 20
+const testMin = 46
+const testSec = 50
 
 const test = '2019/11/23/' + testHour + ':' + testMin + ':' + testSec
 

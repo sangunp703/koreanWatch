@@ -38,6 +38,9 @@ export default class Minute extends Component {
           }
         }
       }
+      if (this.props.time.getMinutes() === 0) {
+        words[5].classList.add('active')
+      }
     }
     if (this.props.time.getMinutes() === 0) {
       words[words.length - 1].classList.remove('active')
@@ -45,22 +48,22 @@ export default class Minute extends Component {
   }
   render() {
     return (
-      <StyledMinute className="minute">
-        <Word word="이" />
-        <Word word="삼" />
-        <Word word="사" />
-        <Word word="오" />
-        <Word word="십" />
-        <Word word="각" />
-        <Word word="일" />
-        <Word word="이" />
-        <Word word="삼" />
-        <Word word="사" />
-        <Word word="육" />
-        <Word word="칠" />
-        <Word word="팔" />
-        <Word word="구" />
-        <Word word="분" />
+      <StyledMinute className='minute'>
+        <Word word='이' />
+        <Word word='삼' />
+        <Word word='사' />
+        <Word word='오' />
+        <Word word='십' />
+        <Word word='각' />
+        <Word word='일' />
+        <Word word='이' />
+        <Word word='삼' />
+        <Word word='사' />
+        <Word word='육' />
+        <Word word='칠' />
+        <Word word='팔' />
+        <Word word='구' />
+        <Word word='분' />
       </StyledMinute>
     )
   }
